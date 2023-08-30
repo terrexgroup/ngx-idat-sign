@@ -30,4 +30,5 @@ jobs:
       uses: actions/upload-artifact@v3.1.2
       with:
         # Artifact name
+        name: Node ${{ matrix.node-version }}
         path: ./dist
