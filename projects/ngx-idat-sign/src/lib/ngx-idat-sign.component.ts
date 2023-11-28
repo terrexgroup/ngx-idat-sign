@@ -4,7 +4,7 @@ import { IDATSignSuccessResponse } from './models/IDATSignSuccessResponse';
 import { IDATSignErrorResponse } from './models/IDATSignErrorResponse';
 
 @Component({
-  selector: 'lib-ngx-idat-sign',
+  selector: 'ngx-idat-sign',
   template: `
   <div id="pdf-sign">
     <iframe src="" [id]="this.eventId + '_iframe'" width="100%" height="100%" name="pdf-sign-frame" style="overflow: auto;" frameborder="0"></iframe>
@@ -111,16 +111,13 @@ export class NgxIdatSignComponent implements OnInit, AfterViewInit {
   public messageHandler = (event: any) => {
     if (event.origin !== this.pdfAsOrigin) return;
     var data = JSON.parse(event.data);
-    console.log('message received:  ' + data, event);
     if (data.suc || data.err) {
       if (data.suc) {
         var successResponse = new IDATSignSuccessResponse(decodeURIComponent(data.suc.pdfUrl));
         this.success.emit(successResponse);
-        console.log('Success Message: ' + data.suc.pdfUrl);
       } else if (data.err) {
         var errorResponse = new IDATSignErrorResponse(data.err.error, data.cause);
         this.error.emit(errorResponse);
-        console.log('Error Message: ' + data.err.error);
       }
     } else if (data.resize) {
 
