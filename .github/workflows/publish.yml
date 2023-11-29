@@ -53,6 +53,6 @@ jobs:
           echo @ngx-idat-sign:https://npm.pkg.github.com/ > dist/.npmrc
           echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> dist/.npmrc
       - run: npm publish
-        working-directory: ./dist
+        working-directory: ./../dist
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
