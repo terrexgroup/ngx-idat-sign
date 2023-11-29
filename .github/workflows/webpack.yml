@@ -25,7 +25,7 @@ jobs:
     - name: Build
       run: |
         npm ci
-        npm run build ngx-idat-sign
+        npm run build
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.2
       with:
