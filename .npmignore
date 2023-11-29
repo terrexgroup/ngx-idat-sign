@@ -1,0 +1,7 @@
+# .npmignore
+
+# Ignoriere alle Dateien und Ordner, außer den dist-Ordner
+*
+!dist/
+
+# Füge weitere Regeln hinzu, falls erforderlich

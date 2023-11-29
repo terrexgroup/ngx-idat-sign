@@ -4,9 +4,9 @@
   "compilerOptions": {
     "outDir": "../../out-tsc/app",
     "types": [],
-    /*"paths": {
+    "paths": {
       "ngx-idat-sign": ["dist/ngx-idat-sign"]
-    }*/
+    }
   },
   "files": [
     "src/main.ts"
