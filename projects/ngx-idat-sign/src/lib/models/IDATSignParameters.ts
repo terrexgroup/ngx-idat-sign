@@ -1,21 +1,33 @@
+/**
+ * Parameters for the Signature
+ */
 export interface IDATSignParameters {
-    // the pdf as url
-    // PDFURL: string,
+    /**
+     * The connectur which should be used for signing. Possible Values are 'bku' (Bürgerkartenumgebung), 'mobilebku' (Handy-Signatur/ID-Austria) or null. If null, the user gets asked which connectur to use.
+     */
     CONNECTOR: 'bku' | 'mobilebku' | null,
-    // TYPE: 'TEXT' | 'PDF' | 'B64',
-    //current URL
-    // TARGETURL: string,
-    // NEW: string,
-    //a qr code to an pdf (why?)
-    //QRCODE: string,
+    /**
+     * The language of the signature
+     */
     LOCALE: 'DE' | 'EN',
-    //Position of the signature (X, Y)
+    /**
+     * The position of the Signature in the PDF-Document on the X-Axis
+     */
     SIG_POS_X: number,
+    /**
+     * The position of the Signature in the PDF-Document on the X-Axis
+     */
     SIG_POS_Y: number,
-    //Page where the signature should be placed
+    /**
+     * The page where the signature should be placed
+     */
     SIG_POS_P: number,
-    //Width of the signature
+    /**
+    * The width of the signature
+    */
     SIG_POS_W: number,
-    //Margin from the bottom of the page
+    /**
+     * The margin of the signature from the bottom of the Page
+     */
     SIG_POS_F: number
 }
