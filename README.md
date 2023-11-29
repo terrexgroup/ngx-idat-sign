@@ -84,7 +84,7 @@ export class AppComponent {
 
 ## Signing Parameters
 
-Next to the pdf file to sign you have to pass some configuration parameters to the component.
+Next to the pdf file to sign you have to pass some configuration parameters to the component. These are defined in the ```IDATSignParameters```-Interface.
 
 | Name      | Type     | Description                                                                                                                                                                                             |
 | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -95,3 +95,5 @@ Next to the pdf file to sign you have to pass some configuration parameters to t
 | SIG_POS_P | `number` | The page where the signature should be placed                                                                                                                                                           |
 | SIG_POS_W | `number` | The width of the signature                                                                                                                                                                              |
 | SIG_POS_F | `number` | The margin of the signature from the bottom of the Page                                                                                                                                                 |
+
+## Event Emitters
