@@ -1,3 +1,18 @@
 <div class="demo-wrapper">
-    <ngx-idat-sign class="signer" [pdfBase64]="this.pdfBase64" [parameters]="this.params"></ngx-idat-sign>
+    <ngx-idat-sign *ngIf="this.signInProgress" class="signer" [pdfBase64]="this.pdfBase64" [parameters]="this.params" (error)="this.signError($event)" (success)="this.signSuccess($event)"></ngx-idat-sign>
+    <div class="start-sign-btn" *ngIf="!this.signInProgress" (click)="startSign()">
+      <h1>Start Signing Process</h1>
+      <h4>Click here to sign a demo pdf</h4>
+    </div>
+    <div class="error-wrapper" *ngIf="this.error">
+        <h1>Signing process failed!</h1>
+        <h2>Signation process failed with the following parameters</h2>
+        <span>message: {{this.error.message}}</span><br>
+        <span>cause: {{this.error.cause}}</span>
+    </div>
+    <div class="success-wrapper" *ngIf="this.signedPdfUrl">
+        <h1>Signing process successful!</h1>
+        <h2>The signation process was successful</h2>
+        <span>URL with the signed PDF: <a [href]="this.signedPdfUrl" target="_blank">{{this.signedPdfUrl}}</a></span>
+    </div>
 </div>

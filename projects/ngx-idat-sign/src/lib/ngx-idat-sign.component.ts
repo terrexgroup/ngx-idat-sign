@@ -77,12 +77,27 @@ export class NgxIdatSignComponent implements OnInit, AfterViewInit {
       form.target = 'pdf-sign-frame';
       form.enctype = "application/x-www-form-urlencoded";
       Object.values(this.parameters).forEach((element, index) => {
-        var input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = Object.keys(this.parameters ?? [])[index];
-        input.value = element;
-        form.appendChild(input);
+        if (element != null) {
+          var input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = Object.keys(this.parameters ?? [])[index];
+          input.value = element.toString();
+          form.appendChild(input);
+        }
       });
+
+      var targetInput = document.createElement('input');
+      targetInput.type = 'hidden';
+      targetInput.name = "TARGETURL";
+      targetInput.value = document.location.origin;
+      form.appendChild(targetInput);
+
+      var newInput = document.createElement('input');
+      newInput.type = 'hidden';
+      newInput.name = "NEW";
+      newInput.value = "1";
+      form.appendChild(newInput);
+
       var typeInput = document.createElement('input');
       typeInput.type = 'hidden';
       typeInput.name = "TYPE";
