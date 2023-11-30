@@ -31,11 +31,12 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm run build
-      - run: cp README.md dist/README.md
-      - run: cd dist
-      - run: npm publish
+      - run: |
+          npm ci
+          npm run build
+          cp README.md dist/README.md
+          cd dist
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   publish-github:
@@ -50,10 +51,11 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm run build
-      - run: cp README.md dist/README.md
-      - run: cd dist
-      - run: npm publish
+      - run: |
+          npm ci
+          npm run build
+          cp README.md dist/README.md
+          cd dist
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
