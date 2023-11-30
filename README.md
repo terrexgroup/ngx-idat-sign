@@ -96,4 +96,26 @@ Next to the pdf file to sign you have to pass some configuration parameters to t
 | SIG_POS_W | `number` | The width of the signature                                                                                                                                                                              |
 | SIG_POS_F | `number` | The margin of the signature from the bottom of the Page                                                                                                                                                 |
 
-## Event Emitters
+## Responses/Event Emitters
+
+After the signing process A-Trust returns either a success or an error-response.
+These can be received via the implemented Event Emitters.
+
+### Success response
+
+This event emitter is fired if the signation of the Document was successful.
+An ```IDATSignSuccessResponse``` is delivered with the ```(success)```Event emitter.
+
+| Name   | Type     | Description               |
+| ------ | -------- | ------------------------- |
+| pdfUrl | `string` | The url to the signed PDF |
+
+### Error response
+
+If the signationprocess could not be completed A-Trust returns an Error response, which is passed via the ```IDATSignErrorResponse``` object in the ```(error)``` Event emitter.
+
+| Name    | Type     | Description                      |
+| ------- | -------- | -------------------------------- |
+| message | `string` | The error message from A-Trust   |
+| cause   | `string` | More Information about the error |
+

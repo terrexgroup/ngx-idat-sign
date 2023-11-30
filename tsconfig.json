@@ -13,7 +13,7 @@
     "sourceMap": true,
     "paths": {
       "ngx-idat-sign": [
-        "dist/ngx-idat-sign"
+        "dist"
       ]
     },
     "declaration": false,
