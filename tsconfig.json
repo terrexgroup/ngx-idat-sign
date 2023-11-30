@@ -12,9 +12,9 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
-      "ngx-idat-sign": [
-        "dist"
-      ]
+      // "ngx-idat-sign": [
+      //   "dist"
+      // ]
     },
     "declaration": true,
     "downlevelIteration": true,
