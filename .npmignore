@@ -2,6 +2,6 @@
 
 # Ignoriere alle Dateien und Ordner, außer den dist-Ordner
 *
-!dist/
+!dist/*
 
 # Füge weitere Regeln hinzu, falls erforderlich
