@@ -1,5 +1,5 @@
 {
-  "name": "@idatsign/ngx-idat-sign",
+  "name": "ngx-idat-sign",
   "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^15.1.0",
