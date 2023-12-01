@@ -54,8 +54,8 @@ jobs:
       - run: |
           npm ci
           npm run build
-          cp README.md dist/README.md
+          sed -i 's/"name": "ngx-idat-sign"/"name": "@idatsign\/ngx-idat-sign"/g' dist/package.json
           cd dist
-          npm publish
+          npm publish -registry=https://npm.pkg.github.com
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

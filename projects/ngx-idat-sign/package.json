@@ -1,5 +1,5 @@
 {
-  "name": "ngx-idat-sign",
+  "name": "@idatsign/ngx-idat-sign",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^15.1.0",
@@ -8,5 +8,15 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IDATSign/ngx-idat-sign.git"
+  },
+  "keywords": [
+    "Angular",
+    "ID Austria",
+    "PDF Signing",
+    "A-Trust"
+  ]
 }
