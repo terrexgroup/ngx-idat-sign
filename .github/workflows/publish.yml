@@ -1,7 +1,7 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# This workflow will run tests using node and then publish a package to GitHub Packages and NPM when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: Publish Node.js Package
+name: Publish Angular package
 
 on:
   release:
@@ -22,6 +22,7 @@ jobs:
           npm run build
 
   publish-npm:
+    name: Publish to NPM
     needs: build
     runs-on: ubuntu-latest
     environment: NPM
@@ -31,17 +32,19 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: |
+      - name: Publish to NPM
+        run: |
           npm ci
           npm run build
-          cp README.md dist/README.md
           cd dist
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   publish-github:
+    name: Publish to Github Packages
     needs: build
     runs-on: ubuntu-latest
+    environment: GitHub
     permissions:
       contents: read
       packages: write
@@ -51,7 +54,8 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: |
+      - name: Publish to GitHub
+        run: |
           npm ci
           npm run build
           sed -i 's/"name": "ngx-idat-sign"/"name": "@idatsign\/ngx-idat-sign"/g' dist/package.json
