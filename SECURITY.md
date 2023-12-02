@@ -10,6 +10,4 @@ There is currently only one Version which is supported.
 
 ## Reporting a Vulnerability
 
-If you are able to find a vulnerability please do not submit an issue or pull request.
-
-Please report your vulnerability via idatsign@terrex.at
+If you are able to find a vulnerability please do not submit an issue or pull request but submit it using GitHubs vulnerability report feature.
