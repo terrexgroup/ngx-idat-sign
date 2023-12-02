@@ -3,10 +3,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/app",
-    "types": [],
-    /*"paths": {
-      "ngx-idat-sign": ["dist"]
-    }*/
+    "types": []
   },
   "files": [
     "src/main.ts"
