@@ -58,7 +58,7 @@ jobs:
         run: |
           npm ci
           npm run build
-          sed -i 's/"name": "ngx-idat-sign"/"name": "@idatsign\/ngx-idat-sign"/g' dist/package.json
+          sed -i 's/"name": "ngx-idat-sign"/"name": "@terrexgroup\/ngx-idat-sign"/g' dist/package.json
           cd dist
           npm publish -registry=https://npm.pkg.github.com
         env:
